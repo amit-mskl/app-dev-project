@@ -754,3 +754,137 @@
         gap: var(--spacing-4);
     }
 }
+
+/* =================================
+   SKILLS SECTION - COMPLETE FIX
+   Add this to the END of your css/sections.css
+   ================================= */
+
+/* Fixed Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-8);
+    margin-top: var(--spacing-16);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-4);
+}
+
+/* Fixed Skill Card */
+.skill-card-fixed {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    text-align: center;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skill-card-fixed:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--accent-primary);
+}
+
+/* Fixed Skill Icon */
+.skill-icon-fixed {
+    width: 80px;
+    height: 80px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-6);
+    font-size: var(--text-3xl);
+    transition: var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.skill-card-fixed:hover .skill-icon-fixed {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Skill Card Content */
+.skill-card-fixed h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-4);
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.skill-card-fixed p {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--spacing-4);
+    flex-grow: 1;
+    font-size: var(--text-base);
+}
+
+/* Skill Badge */
+.skill-badge {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    padding: var(--spacing-1) var(--spacing-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    display: inline-block;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.skill-badge-success {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-6);
+        margin-top: var(--spacing-12);
+    }
+    
+    .skill-card-fixed {
+        padding: var(--spacing-6);
+        min-height: 250px;
+    }
+    
+    .skill-icon-fixed {
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-4);
+    }
+    
+    .skill-card-fixed h4 {
+        font-size: var(--text-lg);
+    }
+    
+    .skill-card-fixed p {
+        font-size: var(--text-sm);
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+}
