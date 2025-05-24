@@ -45,20 +45,25 @@
     padding: 0;
 }
 
+/* =================================
+   NAVIGATION FONT SIZE FIX
+   Replace the nav-links styling in your css/components.css
+   ================================= */
+
 .nav-links a {
     /* Reset any conflicting styles */
     position: relative;
     display: block;
     
-    /* Typography */
+    /* Typography - INCREASED FONT SIZE */
     color: var(--text-secondary);
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-weight: var(--font-medium);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);  /* Changed from var(--text-sm) to var(--text-base) */
     
     /* Layout */
-    padding: var(--spacing-2) var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-5);  /* Slightly increased padding too */
     border-radius: var(--radius-3xl);
     
     /* Smooth transitions */
