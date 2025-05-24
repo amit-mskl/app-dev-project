@@ -464,3 +464,32 @@ select:focus {
         --glass-border: currentColor;
     }
 }
+
+/* =================================
+   TEMPORARY FIX - MAKE SECTIONS VISIBLE
+   Add this to the END of css/base.css
+   ================================= */
+
+/* Make all sections and elements visible until we add proper animations */
+.fade-in,
+.fade-in-stagger,
+.reveal-left,
+.reveal-right,
+.reveal-up,
+.stagger-1,
+.stagger-2,
+.stagger-3,
+.stagger-4,
+.stagger-5 {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Ensure main sections are visible */
+.about,
+.skills,
+.contact {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
