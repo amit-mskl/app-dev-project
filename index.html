@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>My First Page</title>
-    <style>
+<style>
     body {
         background-color: lightblue;
         font-family: Arial, sans-serif;
@@ -11,7 +11,6 @@
         padding: 20px;
     }
     
-    /* New: Content container */
     .container {
         max-width: 800px;
         margin: 0 auto;
@@ -23,15 +22,17 @@
     h1 {
         color: darkblue;
         text-align: center;
+        font-size: 28px;
     }
     
     h2 {
         color: navy;
         margin-top: 30px;
+        font-size: 22px;
     }
     
     p {
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 15px;
     }
     
@@ -53,7 +54,7 @@
     
     li {
         margin-bottom: 8px;
-        font-size: 16px;
+        font-size: 18px;
     }
     
     a {
@@ -70,18 +71,27 @@
         color: navy;
     }
     
-    /* Mobile adjustments */
+    /* Better Mobile Styles */
     @media (max-width: 600px) {
         body {
-            padding: 10px;
+            padding: 15px;
         }
         
         .container {
             padding: 20px;
+            background-color: transparent;
         }
         
         h1 {
-            font-size: 24px;
+            font-size: 26px;
+        }
+        
+        h2 {
+            font-size: 20px;
+        }
+        
+        p, li {
+            font-size: 17px;
         }
         
         img {
@@ -89,7 +99,7 @@
             height: 150px;
         }
     }
-    </style>
+</style>
 </head>
 <body>
     <div class="container">
