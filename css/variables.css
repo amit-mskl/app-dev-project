@@ -12,7 +12,7 @@
     --bg-tertiary: #1a1a1a;          /* Tertiary background */
     
     /* Accent Colors */
-    --accent-primary: #3b82f6;       /* Primary blue */
+    --accent-primary: ##ef4444;       /* Primary red */
     --accent-secondary: #8b5cf6;     /* Secondary purple */
     --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     --accent-hover: #2563eb;         /* Darker blue for hover states */
