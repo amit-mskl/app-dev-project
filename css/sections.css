@@ -669,25 +669,42 @@
 }
 
 /* Fix the blue underline spacing */
+
 .about-text-only h3 {
     font-family: 'DM Sans', sans-serif;
     font-size: var(--text-3xl);
     font-weight: var(--font-bold);
-    margin-bottom: var(--spacing-10); /* INCREASED from var(--spacing-6) */
+    margin-bottom: var(--spacing-12); /* More space for the underline */
     color: var(--text-primary);
     position: relative;
+    text-align: center;
 }
 
 .about-text-only h3::after {
     content: '';
     position: absolute;
-    bottom: -var(--spacing-4); /* More space from text */
+    bottom: -var(--spacing-6); /* Proper spacing like section title */
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 80px; /* Same width as section title */
+    height: 4px; /* Same height as section title */
     background: var(--accent-gradient);
     border-radius: var(--radius-full);
+}
+
+/* Optional: Add the same glow effect as section title */
+.about-text-only h3::before {
+    content: '';
+    position: absolute;
+    bottom: -var(--spacing-5);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-full);
+    filter: blur(8px);
+    opacity: 0.6;
 }
 
 /* Increase paragraph font size */
