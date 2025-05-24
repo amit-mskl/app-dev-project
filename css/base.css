@@ -466,30 +466,93 @@ select:focus {
 }
 
 /* =================================
-   TEMPORARY FIX - MAKE SECTIONS VISIBLE
-   Add this to the END of css/base.css
+   SCROLL ANIMATION STYLES
+   REPLACE the temporary visibility fix in css/base.css with this
    ================================= */
 
-/* Make all sections and elements visible until we add proper animations */
-.fade-in,
-.fade-in-stagger,
-.reveal-left,
-.reveal-right,
-.reveal-up,
-.stagger-1,
-.stagger-2,
-.stagger-3,
-.stagger-4,
-.stagger-5 {
-    opacity: 1 !important;
-    transform: none !important;
+/* Initial hidden states for scroll animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-/* Ensure main sections are visible */
+.fade-in-stagger {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.reveal-down {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* Hero animations (these start immediately) */
+.hero .hero-subtitle {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.hero .hero-title {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+}
+
+.hero .hero-description {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.hero .hero-cta {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+.hero .hero-profile {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+/* Ensure sections are visible */
 .about,
 .skills,
 .contact {
     display: block;
-    opacity: 1;
     visibility: visible;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .fade-in-stagger,
+    .reveal-left,
+    .reveal-right,
+    .reveal-up,
+    .reveal-down {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero .hero-subtitle,
+    .hero .hero-title,
+    .hero .hero-description,
+    .hero .hero-cta,
+    .hero .hero-profile {
+        opacity: 1 !important;
+        animation: none !important;
+    }
 }
