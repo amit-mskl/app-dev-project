@@ -95,40 +95,6 @@
 
 /* ===== THEME TOGGLE - SIMPLIFIED ===== */
 
-.theme-toggle {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-full);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--text-primary);
-    font-size: var(--text-lg);
-    transition: var(--transition-normal);
-    position: relative;
-}
-
-.theme-toggle:hover {
-    background: var(--accent-gradient);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: var(--shadow-glow);
-    border-color: transparent;
-    color: #ffffff;
-}
-
-.theme-toggle:active {
-    transform: translateY(-2px) scale(0.95);
-}
-
-/* Remove complex pseudo-elements from theme toggle */
-.theme-toggle::before,
-.theme-toggle::after {
-    display: none;
-}
-
 /* ===== THEME TOGGLE COMPONENT ===== */
 
 .theme-toggle {
