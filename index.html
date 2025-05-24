@@ -3,20 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Test</title>
+    <meta name="description" content="Amit Choudhary - Passionate web developer crafting modern, responsive websites. Specializing in HTML, CSS, JavaScript, and modern web technologies.">
+    <meta name="keywords" content="web developer, frontend developer, HTML, CSS, JavaScript, responsive design, modern web development">
+    <meta name="author" content="Amit Choudhary">
     
-    <!-- DM Sans Font -->
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Amit Choudhary - Web Developer">
+    <meta property="og:description" content="Passionate web developer on a journey to build amazing digital experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.enqurious.com/_next/image?url=%2Famit-choudhary-image.webp&w=1920&q=75">
+    
+    <title>Amit Choudhary - Web Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    
+    <!-- Google Fonts - DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     
-    <!-- Your CSS Files -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <h1>Testing DM Sans Font</h1>
-    <p>This should now be in DM Sans!</p>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+            <li><a href="#home" class="active" aria-current="page">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Switch theme">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-label="Introduction">
+            <div class="hero-content">
+                <div class="hero-subtitle">Hello, I'm</div>
+                <h1 class="hero-title">Amit Choudhary</h1>
+                <p class="hero-description">
+                    Passionate web developer on a journey to build amazing digital experiences. 
+                    Currently learning modern web technologies and crafting beautiful, responsive websites.
+                </p>
+                <div class="hero-cta">
+                    <a href="#about" class="btn btn-primary">Discover My Journey</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-normal fade-in" aria-labelledby="about-title">
+            <div class="about-content">
+                <div class="about-image reveal-left">
+                    <img src="https://www.enqurious.com/_next/image?url=%2Famit-choudhary-image.webp&w=1920&q=75" 
+                         alt="Amit Choudhary - Web Developer" 
+                         loading="lazy"
+                         width="350" 
+                         height="350">
+                </div>
+                <div class="about-text reveal-right">
+                    <h2 id="about-title" class="section-title">About Me</h2>
+                    <h3>Building the Web, One Line at a Time</h3>
+                    <p>
+                        I'm excited to embark on this incredible journey of web development. Every day brings new 
+                        challenges and opportunities to learn cutting-edge technologies that shape the digital world.
+                        My passion lies in creating user-centered experiences that are both beautiful and functional.
+                    </p>
+                    <p>
+                        My goal is to create meaningful, accessible experiences that not only look stunning 
+                        but also solve real-world problems. I believe in continuous learning, staying curious 
+                        about emerging trends, and building with modern best practices in mind.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing to open source 
+                        projects, or learning about the latest developments in web design and user experience.
+                    </p>
+                    <a href="https://www.enqurious.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Check out Enqurious ↗
+                    </a>
+                    
+                    <!-- About Stats -->
+                    <div class="about-stats reveal-up">
+                        <div class="stat-item stagger-1">
+                            <span class="stat-number">2024</span>
+                            <span class="stat-label">Started Journey</span>
+                        </div>
+                        <div class="stat-item stagger-2">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item stagger-3">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-normal" aria-labelledby="skills-title">
+            <div class="skills-content">
+                <h2 id="skills-title" class="section-title fade-in">My Skills & Learning Journey</h2>
+                <div class="skills-grid">
+                    <div class="skill-card fade-in-stagger stagger-1" tabindex="0">
+                        <div class="skill-icon" aria-hidden="true">🌐</div>
+                        <h4>HTML & Web Fundamentals</h4>
+                        <p>Building semantic, accessible web structures with modern HTML5 standards and best practices. Focus on clean markup and meaningful document structure.</p>
+                        <div class="badge badge-primary">Learning</div>
+                    </div>
+                    
+                    <div class="skill-card fade-in-stagger stagger-2" tabindex="0">
+                        <div class="skill-icon" aria-hidden="true">🎨</div>
+                        <h4>CSS & Responsive Design</h4>
+                        <p>Creating beautiful, responsive layouts with CSS Grid, Flexbox, and modern styling techniques. Expertise in mobile-first design and accessibility.</p>
+                        <div class="badge badge-primary">Learning</div>
+                    </div>
+                    
+                    <div class="skill-card fade-in-stagger stagger-3" tabindex="0">
+                        <div class="skill-icon" aria-hidden="true">⚡</div>
+                        <h4>JavaScript & Interactivity</h4>
+                        <p>Adding dynamic behavior and interactivity to websites. Learning modern ES6+ features, DOM manipulation, and event handling.</p>
+                        <div class="badge badge-primary">Learning</div>
+                    </div>
+                    
+                    <div class="skill-card fade-in-stagger stagger-4" tabindex="0">
+                        <div class="skill-icon" aria-hidden="true">🧠</div>
+                        <h4>Problem Solving</h4>
+                        <p>Approaching challenges with analytical thinking and breaking down complex problems into manageable, elegant solutions.</p>
+                        <div class="badge badge-success">Strength</div>
+                    </div>
+                    
+                    <div class="skill-card fade-in-stagger stagger-5" tabindex="0">
+                        <div class="skill-icon" aria-hidden="true">🚀</div>
+                        <h4>Modern Web Tools</h4>
+                        <p>Learning build tools, version control with Git, and modern development workflows. Embracing best practices for maintainable code.</p>
+                        <div class="badge badge-primary">Learning</div>
+                    </div>
+                    
+                    <div class="skill-card fade-in-stagger stagger-1" tabindex="0">
+                        <div class="skill-icon" aria-hidden="true">💡</div>
+                        <h4>Continuous Learning</h4>
+                        <p>Staying curious and committed to learning new technologies, frameworks, and development methodologies. Always growing and improving.</p>
+                        <div class="badge badge-success">Mindset</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Optional - for future use) -->
+        <section id="projects" class="projects section-normal" aria-labelledby="projects-title" style="display: none;">
+            <div class="projects-content">
+                <h2 id="projects-title" class="section-title fade-in">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project cards will go here when you have projects to showcase -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-normal fade-in" aria-labelledby="contact-title">
+            <div class="contact-content">
+                <h2 id="contact-title" class="section-title">Let's Connect</h2>
+                <div class="contact-intro">
+                    <p>
+                        Ready to start a conversation? I'd love to hear from you! Whether you have a project in mind, 
+                        want to discuss web development, or just say hello, don't hesitate to reach out.
+                    </p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-card reveal-up stagger-1" tabindex="0" role="button" aria-label="Email contact">
+                        <div class="contact-icon" aria-hidden="true">📧</div>
+                        <h4>Email</h4>
+                        <p>amit@example.com</p>
+                    </div>
+                    
+                    <div class="contact-card reveal-up stagger-2" tabindex="0" role="button" aria-label="Phone contact">
+                        <div class="contact-icon" aria-hidden="true">📱</div>
+                        <h4>Phone</h4>
+                        <p>+91-12345-67890</p>
+                    </div>
+                    
+                    <div class="contact-card reveal-up stagger-3" tabindex="0" role="button" aria-label="Location">
+                        <div class="contact-icon" aria-hidden="true">📍</div>
+                        <h4>Location</h4>
+                        <p>India</p>
+                    </div>
+                </div>
+
+                <!-- Optional Contact Form -->
+                <form class="contact-form reveal-up" style="display: none;" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding: var(--spacing-8) 0; text-align: center; border-top: 1px solid var(--border-color); margin-top: var(--spacing-16);">
+        <div class="container">
+            <p style="color: var(--text-muted); font-size: var(--text-sm);">
+                © 2024 Amit Choudhary. Built with passion and modern web technologies.
+            </p>
+            <div style="margin-top: var(--spacing-4); display: flex; justify-content: center; gap: var(--spacing-4);">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="GitHub profile">
+                    GitHub
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="LinkedIn profile">
+                    LinkedIn
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="Twitter profile">
+                    Twitter
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files (to be added next) -->
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Amit Choudhary",
+        "jobTitle": "Web Developer",
+        "description": "Passionate web developer on a journey to build amazing digital experiences.",
+        "url": "https://your-domain.com",
+        "sameAs": [
+            "https://github.com/your-username",
+            "https://linkedin.com/in/your-profile"
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "Web Development", "Responsive Design"],
+        "alumniOf": "Your Education",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "India"
+        }
+    }
+    </script>
 </body>
 </html>

@@ -1,0 +1,607 @@
+/* =================================
+   MOBILE-FIRST RESPONSIVE DESIGN
+   Breakpoints: 480px, 768px, 1024px, 1280px, 1536px
+   ================================= */
+
+/* ===== MOBILE FIRST BASE (up to 479px) ===== */
+/* Most styles are already mobile-first in base.css and components.css */
+
+/* Mobile-specific adjustments */
+@media (max-width: 479px) {
+    
+    /* ===== NAVIGATION ===== */
+    .navbar {
+        top: var(--spacing-2);
+        left: var(--spacing-2);
+        right: var(--spacing-2);
+        transform: none;
+        width: auto;
+        padding: var(--spacing-2) var(--spacing-4);
+        gap: var(--spacing-2);
+    }
+
+    .nav-links {
+        gap: var(--spacing-1);
+    }
+
+    .nav-links a {
+        padding: var(--spacing-1) var(--spacing-2);
+        font-size: var(--text-xs);
+        border-radius: var(--radius-xl);
+    }
+
+    .theme-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: var(--text-sm);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+        padding: var(--spacing-4) var(--spacing-3);
+        min-height: calc(100vh - 60px); /* Account for mobile navbar */
+    }
+
+    .hero-title {
+        font-size: var(--text-4xl);
+        margin-bottom: var(--spacing-4);
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-sm);
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+        margin-bottom: var(--spacing-6);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-3);
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Hide floating elements on mobile for performance */
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--spacing-8);
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about {
+        padding: var(--spacing-16) 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+        text-align: center;
+        padding: 0 var(--spacing-3);
+    }
+
+    .about-image {
+        order: -1; /* Image first on mobile */
+    }
+
+    .about-image img {
+        max-width: 250px;
+    }
+
+    .about-text h3 {
+        font-size: var(--text-2xl);
+        text-align: center;
+    }
+
+    .about-text h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-3);
+    }
+
+    /* ===== SKILLS SECTION ===== */
+    .skills {
+        padding: var(--spacing-16) 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        margin-top: var(--spacing-8);
+    }
+
+    .skill-card {
+        padding: var(--spacing-6);
+    }
+
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-4);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact {
+        padding: var(--spacing-16) 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        margin-bottom: var(--spacing-8);
+    }
+
+    .contact-intro p {
+        font-size: var(--text-base);
+    }
+
+    /* ===== PROJECTS SECTION ===== */
+    .projects {
+        padding: var(--spacing-16) 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        margin-top: var(--spacing-8);
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+        padding: var(--spacing-3) var(--spacing-6);
+        font-size: var(--text-sm);
+    }
+
+    .btn-lg {
+        padding: var(--spacing-4) var(--spacing-8);
+        font-size: var(--text-base);
+    }
+
+    /* ===== FORMS ===== */
+    .contact-form {
+        padding: var(--spacing-6);
+    }
+}
+
+/* ===== SMALL MOBILE (480px - 639px) ===== */
+@media (min-width: 480px) and (max-width: 639px) {
+    
+    .navbar {
+        top: var(--spacing-3);
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        padding: var(--spacing-2) var(--spacing-5);
+    }
+
+    .nav-links {
+        gap: var(--spacing-3);
+    }
+
+    .nav-links a {
+        padding: var(--spacing-2) var(--spacing-3);
+        font-size: var(--text-sm);
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: var(--text-base);
+    }
+
+    .hero-title {
+        font-size: var(--text-5xl);
+    }
+
+    .hero-cta .btn {
+        max-width: 200px;
+    }
+
+    .about-image img {
+        max-width: 300px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* ===== TABLET PORTRAIT (640px - 767px) ===== */
+@media (min-width: 640px) and (max-width: 767px) {
+    
+    .hero-cta {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-12);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== TABLET LANDSCAPE (768px - 1023px) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .navbar {
+        padding: var(--spacing-3) var(--spacing-6);
+        gap: var(--spacing-4);
+    }
+
+    .nav-links {
+        gap: var(--spacing-5);
+    }
+
+    .nav-links a {
+        padding: var(--spacing-2) var(--spacing-4);
+        font-size: var(--text-sm);
+    }
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero {
+        padding: 0 var(--spacing-6);
+    }
+
+    .hero-title {
+        font-size: var(--text-6xl);
+    }
+
+    .hero-description {
+        font-size: var(--text-lg);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1.5fr;
+        gap: var(--spacing-16);
+        padding: 0 var(--spacing-6);
+    }
+
+    .about-text {
+        padding: 0;
+    }
+
+    .about-text h3 {
+        text-align: left;
+    }
+
+    .about-text h3::after {
+        left: 0;
+        transform: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-6);
+    }
+}
+
+/* ===== SMALL DESKTOP (1024px - 1279px) ===== */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    
+    .navbar {
+        padding: var(--spacing-3) var(--spacing-6);
+        gap: var(--spacing-5);
+    }
+
+    .nav-links {
+        gap: var(--spacing-6);
+    }
+
+    .nav-links a {
+        font-size: var(--text-base);
+    }
+
+    .hero::before,
+    .hero::after {
+        display: block; /* Re-enable floating elements on larger screens */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 2fr;
+        gap: var(--spacing-20);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-8);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-8);
+    }
+}
+
+/* ===== LARGE DESKTOP (1280px - 1535px) ===== */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    
+    .section-title {
+        font-size: var(--text-5xl);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== EXTRA LARGE DESKTOP (1536px+) ===== */
+@media (min-width: 1536px) {
+    
+    .hero-title {
+        font-size: var(--text-7xl);
+    }
+
+    .section-title {
+        font-size: var(--text-6xl);
+    }
+
+    .about-content {
+        gap: var(--spacing-24);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-10);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-10);
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION FIXES ===== */
+@media (orientation: landscape) and (max-height: 500px) {
+    
+    .hero {
+        min-height: 100vh;
+        padding: var(--spacing-8) var(--spacing-4);
+    }
+
+    .hero-title {
+        font-size: var(--text-4xl);
+        margin-bottom: var(--spacing-3);
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+        margin-bottom: var(--spacing-6);
+    }
+
+    .hero-cta {
+        gap: var(--spacing-3);
+    }
+
+    .hero-cta .btn {
+        padding: var(--spacing-2) var(--spacing-6);
+    }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    
+    /* Optimize for retina displays */
+    .skill-icon,
+    .contact-icon {
+        font-size: 1.1em; /* Slightly larger icons for crisp rendering */
+    }
+
+    /* Sharper borders on high DPI */
+    .card,
+    .skill-card,
+    .contact-card {
+        border-width: 0.5px;
+    }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (pointer: coarse) {
+    
+    /* Larger touch targets for mobile */
+    .btn {
+        min-height: 44px; /* iOS recommended minimum */
+        padding: var(--spacing-3) var(--spacing-8);
+    }
+
+    .nav-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Reduce hover effects on touch devices */
+    .card:hover,
+    .skill-card:hover,
+    .contact-card:hover {
+        transform: none;
+    }
+
+    /* But keep the tap effects */
+    .card:active,
+    .skill-card:active,
+    .contact-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    .navbar,
+    .theme-toggle,
+    .hero-cta,
+    .contact-form {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-4) 0;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* Enhanced focus styles for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+    .nav-links a:focus,
+    .btn:focus,
+    .theme-toggle:focus {
+        outline: 2px solid var(--accent-primary);
+        outline-offset: 2px;
+        transform: scale(1.05);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    
+    .card,
+    .skill-card,
+    .contact-card {
+        border-width: 2px;
+        border-color: currentColor;
+    }
+
+    .btn-primary {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero-content * {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .fade-in,
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ===== CONTAINER QUERIES (Future-proofing) ===== */
+/* These will work in modern browsers that support container queries */
+@supports (container-type: inline-size) {
+    
+    .skills-content {
+        container-type: inline-size;
+    }
+
+    @container (min-width: 600px) {
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @container (min-width: 900px) {
+        .skills-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @container (min-width: 1200px) {
+        .skills-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+/* ===== EXPERIMENTAL FEATURES ===== */
+
+/* Support for dynamic viewport units (modern mobile browsers) */
+@supports (height: 100dvh) {
+    .hero {
+        min-height: 100dvh;
+    }
+}
+
+/* CSS Subgrid support (when available) */
+@supports (grid-template-rows: subgrid) {
+    .skills-grid {
+        grid-template-rows: subgrid;
+    }
+}
