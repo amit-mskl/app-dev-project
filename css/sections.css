@@ -649,3 +649,91 @@
         height: 220px;
     }
 }
+
+/* =================================
+   ABOUT SECTION FIXES
+   Add this to the END of your css/sections.css file
+   ================================= */
+
+/* Centered About Section Layout */
+.about-content-centered {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+    text-align: center;
+}
+
+.about-text-only {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Fix the blue underline spacing */
+.about-text-only h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-10); /* INCREASED from var(--spacing-6) */
+    color: var(--text-primary);
+    position: relative;
+}
+
+.about-text-only h3::after {
+    content: '';
+    position: absolute;
+    bottom: -var(--spacing-4); /* More space from text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-full);
+}
+
+/* Increase paragraph font size */
+.about-text-only p {
+    color: var(--text-secondary);
+    font-size: var(--text-xl); /* INCREASED from var(--text-lg) */
+    margin-bottom: var(--spacing-6);
+    line-height: var(--leading-relaxed);
+    text-align: left; /* Better readability */
+}
+
+.about-text-only p:last-of-type {
+    margin-bottom: var(--spacing-8);
+}
+
+/* Center the button */
+.about-text-only .btn {
+    display: inline-block;
+    margin-bottom: var(--spacing-8);
+}
+
+/* Stats styling for new layout */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-6);
+    margin-top: var(--spacing-8);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about-text-only h3 {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-8);
+    }
+    
+    .about-text-only p {
+        font-size: var(--text-lg); /* Slightly smaller on mobile but still larger than before */
+        text-align: center; /* Center on mobile */
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-4);
+    }
+}
