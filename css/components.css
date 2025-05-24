@@ -5,6 +5,13 @@
 
 /* ===== NAVIGATION COMPONENT ===== */
 
+/* =================================
+   FIXED NAVIGATION - CLEAN & RELIABLE
+   Replace the navigation section in components.css
+   ================================= */
+
+/* ===== NAVIGATION COMPONENT ===== */
+
 .navbar {
     position: fixed;
     top: var(--spacing-6);
@@ -30,11 +37,6 @@
     transition: var(--transition-normal);
 }
 
-.navbar:hover {
-    background: var(--glass-bg);
-    border-color: var(--accent-primary);
-}
-
 .nav-links {
     display: flex;
     gap: var(--spacing-6);
@@ -44,39 +46,82 @@
 }
 
 .nav-links a {
+    /* Reset any conflicting styles */
+    position: relative;
+    display: block;
+    
+    /* Typography */
     color: var(--text-secondary);
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-weight: var(--font-medium);
     font-size: var(--text-sm);
+    
+    /* Layout */
     padding: var(--spacing-2) var(--spacing-4);
     border-radius: var(--radius-3xl);
-    transition: var(--transition-normal);
-    position: relative;
+    
+    /* Smooth transitions */
+    transition: all var(--duration-normal) var(--ease-out);
+    
+    /* Ensure clean hover area */
     overflow: hidden;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ffffff !important;
+/* Simple, reliable hover and active states */
+.nav-links a:hover {
+    color: #ffffff;
     background: var(--accent-gradient);
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow);
 }
 
-.nav-links a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left var(--duration-slow) var(--ease-out);
+.nav-links a.active {
+    color: #ffffff;
+    background: var(--accent-gradient);
+    box-shadow: var(--shadow-glow);
 }
 
-.nav-links a:hover::before {
-    left: 100%;
+/* Remove any conflicting pseudo-elements */
+.nav-links a::before,
+.nav-links a::after {
+    display: none;
+}
+
+/* ===== THEME TOGGLE - SIMPLIFIED ===== */
+
+.theme-toggle {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-gradient);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-glow);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.theme-toggle:active {
+    transform: translateY(-2px) scale(0.95);
+}
+
+/* Remove complex pseudo-elements from theme toggle */
+.theme-toggle::before,
+.theme-toggle::after {
+    display: none;
 }
 
 /* ===== THEME TOGGLE COMPONENT ===== */
