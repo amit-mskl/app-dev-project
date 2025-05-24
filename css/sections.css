@@ -888,3 +888,66 @@
         gap: var(--spacing-6);
     }
 }
+
+/* =================================
+   AUTOMATIC SECTION SEPARATORS
+   Add this to the END of your css/sections.css
+   This creates consistent blue lines between ALL sections
+   ================================= */
+
+/* Add separator line above each section (except hero) */
+.about::before,
+.skills::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent-gradient);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Make sure sections are positioned relative */
+.hero,
+.about,
+.skills,
+.contact {
+    position: relative;
+}
+
+/* Enhance the separator on light theme */
+[data-theme="light"] .about::before,
+[data-theme="light"] .skills::before,
+[data-theme="light"] .contact::before {
+    opacity: 0.3;
+}
+
+/* Optional: Add a subtle glow effect to separators */
+.about::after,
+.skills::after,
+.contact::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: var(--accent-gradient);
+    opacity: 0.1;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+/* Remove any existing separators from skills section to avoid conflicts */
+.skills::before {
+    background: var(--accent-gradient) !important;
+    opacity: 0.4 !important;
+    height: 1px !important;
+}
+
+.skills::after {
+    display: none; /* Remove any existing after pseudo-element */
+}
